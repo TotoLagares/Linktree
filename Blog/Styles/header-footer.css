@@ -23,7 +23,7 @@ header {
 .header_div a {
     text-decoration: none;
     color: #FFE4E1;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
     font-family: "Dosis", sans-serif;
     transition: color 0.3s ease;
@@ -34,7 +34,7 @@ header {
 }
 
 .name_div {
-    font-size: 0.75rem;
+    font-size: 0.6rem;
     font-weight: bold;
     margin: 1rem;
 }
@@ -61,7 +61,7 @@ header {
 .navbar li a {
     text-decoration: none;
     color: #FFE4E1; /* Misty Rose */
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     font-weight: bold;
     font-family: "Dosis", sans-serif;
     transition: color 0.3s ease;
@@ -134,77 +134,91 @@ footer {
     .header_div {
         flex-direction: column;
         text-align: center;
+        padding: 0.6rem;
     }
 
     .navbar {
-        margin: 1rem 0;
+        margin: 0.6rem 0;
+        width: 100%;
     }
 
     .navbar ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.4rem;
+        width: 100%;
     }
 
     .header_div a {
-        font-size: 1.2rem;
+        font-size: 0.8rem;
+        padding: 0.2rem;
+    }
+
+    .navbar li {
+        width: auto;
+        text-align: center;
     }
 
     .navbar li a {
-        font-size: 1rem;
+        font-size: 0.7rem;
+        padding: 0.2rem;
     }
+
     .footer_div {
         flex-direction: column;
         text-align: center;
-        gap: 15px;
-        padding: 15px;
+        gap: 1rem;
+        padding: 1rem;
     }
 
     .media_div {
-        gap: 15px;
+        gap: 1rem;
+        justify-content: center;
     }
-
-    .media_div a {
-        font-size: 20px;
-    }
-
-    .media_div a:hover {
-        transform: translateY(-1px);
-    }
-
-
 }
 
 @media screen and (max-width: 480px) {
     .header_div {
-        padding: 0.5rem;
+        padding: 0.3rem;
+    }
+
+    .name_div {
+        font-size: 0.5rem;
+        margin: 0.3rem;
     }
 
     .navbar {
-        margin: 0.5rem 0;
+        margin: 0.3rem 0;
     }
 
     .header_div a {
-        font-size: 1rem;
+        font-size: 0.7rem;
     }
 
     .navbar li a {
-        font-size: 0.9rem;
+        font-size: 0.6rem;
+        padding: 0.2rem;
     }
+
     .footer_div {
-        padding: 10px;
+        padding: 0.8rem;
     }
 
     .media_div {
-        gap: 10px;
+        gap: 0.8rem;
     }
 
     .media_div a {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .footer_div p {
-        font-size: 14px;
+        font-size: 0.8rem;
     }
 
+    .navbar ul {
+        gap: 0.2rem;
+    }
 }
