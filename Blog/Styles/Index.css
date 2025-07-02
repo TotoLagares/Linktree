@@ -246,14 +246,12 @@ main {
     color: #FFA07A;
     margin-bottom: 2rem;
     font-style: italic;
-    animation: fadeInUp 1s ease;
 }
 
 .presentacion_descripcion {
     font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 3rem;
-    animation: fadeIn 2s ease;
 }
 
 .presentacion_estadisticas {
@@ -261,7 +259,7 @@ main {
     justify-content: space-around;
     gap: 2rem;
     margin-top: 3rem;
-    animation: fadeInUp 1.5s ease;
+    animation: fadeInDown 1s ease;
 }
 
 .estadistica {
