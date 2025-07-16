@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="../Styles/HeaderFooter.css">
+    <link rel="stylesheet" href="../Styles/contacto.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header_div">
+      <div class="name_div">
+        <h1><a href="../indexPortfolio.html">Portfolio</a></h1>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="../indexPortfolio.html#conocimientos">Conocimientos</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="../../index.html">Linktree</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="form_container" id="formulario">
+      <form class="form_contacto" id="form_contacto">
+        <h2>Contacto</h2>
+
+        <div class="form_group">
+          <label for="nombre">Nombre y Apellido</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez">
+        </div>
+
+        <div class="form_group">
+          <label for="email">Correo Electrónico</label>
+          <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+        </div>
+
+        <div class="form_group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" required minlength="10" placeholder="Escribe tu mensaje aquí..."></textarea>
+        </div>
+
+        <button type="submit" class="button_submit">Enviar Formulario</button>
+        <div id="form-mensaje" class="form-mensaje"></div>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <div class="footer_div">
+      <p>© 2025 Santiago Lagares, Derechos reservados</p>
+      <div class="media_div">
+        <a href="https://www.linkedin.com/in/santiago-lagares-55b790261/"  target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/toto.lagaress/" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function(){
+      emailjs.init("GzRzbNPWfxQ_l_EbG");
+    })();
+
+    function showMessage(mensaje, isError = false) {
+      const msg = document.getElementById('form-mensaje');
+      msg.textContent = mensaje;
+      msg.classList.toggle('error', isError);
+      msg.style.opacity = '1';
+
+      setTimeout(() => {
+        msg.style.opacity = '0';
+      }, 2000);
+    }
+
+    document.getElementById('form_contacto').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      emailjs.sendForm('service_i1rc2vo', 'template_vimysbf', this)
+              .then(function() {
+                showMessage('¡Mensaje enviado con éxito!');
+                document.getElementById('form_contacto').reset();
+              }, function(error) {
+                showMessage('Error al enviar. Intenta nuevamente.', true);
+              });
+    });
+  </script>
+
+</body>
+</html>

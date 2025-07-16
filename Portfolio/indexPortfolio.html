@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="Styles/HeaderFooter.css">
+    <link rel="stylesheet" href="Styles/indexPortfolio.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="main.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="header_div">
+            <div class="name_div">
+                <h1><a href="#">Portfolio</a></h1>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#conocimientos">Conocimientos</a></li>
+                    <li><a href="pages/contacto.html">Contacto</a></li>
+                    <li><a href="../index.html">Linktree</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="linea_div">
+            <div class="linea"></div>
+        </div>
+        <div class="prin_div">
+            <div class="info_div">
+                <h2>Hola, soy Santiago Lagares</h2>
+                <h4 style="padding-bottom: 1rem">Soy estudiante de segundo año de Ingeniería en informatica.</h4>
+                <p style="font-weight: bold;">    Hola, soy Santiago, estudiante de segundo año de Ingeniería en Informática.</p>
+                <p style="font-weight: bold;"> He realizado varios cursos y bootcamps de desarrollo web y JavaScript,</p>
+                <p style="font-weight: bold;">   y lo que más me apasiona es el backend y la resolución de algoritmos.</p>
+                <p style="font-weight: bold;"> Estoy enfocado en crecer y aplicar mis conocimientos en proyectos que me permitan seguir aprendiendo.</p>
+            </div>
+            <div class="imagen_div">
+                <img src="./src/yo.jpg" alt="Portfolio Logo" class="logo" style="object-fit:cover; height:400px;">
+            </div>
+        </div>
+        <div class="segundo_div">
+            <div class="segundo_div_texto">
+                <h2>Mis Proyectos</h2>
+                <p>Estas son algunos de mis proyectos en JS.</p>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <img src="src/calculadora.png" alt="Card imagen" class="card-imagen">
+                    <h4>Calculadora</h4>
+                    <div class="div_botones">
+                        <button class="botones_abrir" id="AbrirCalculadora">Visitar</button>
+                        <!--Calculadora-->
+                        <div class="overlay" id="overlayCalculadora">
+                            <div class="modal" id="modal">
+                                <button class="cerrar-modal" id="CerrarCalculadora">X</button>
+                                <div class="calculadora">
+                                    <input type="text" id="resultado" readonly>
+                                    <div class="botones">
+                                        <button class="btn" onclick="append('7')">7</button>
+                                        <button class="btn" onclick="append('8')">8</button>
+                                        <button class="btn" onclick="append('9')">9</button>
+                                        <button class="btn operador" onclick="append('/')">/</button>
+
+                                        <button class="btn" onclick="append('4')">4</button>
+                                        <button class="btn" onclick="append('5')">5</button>
+                                        <button class="btn" onclick="append('6')">6</button>
+                                        <button class="btn operador" onclick="append('*')">*</button>
+
+                                        <button class="btn" onclick="append('1')">1</button>
+                                        <button class="btn" onclick="append('2')">2</button>
+                                        <button class="btn" onclick="append('3')">3</button>
+                                        <button class="btn operador" onclick="append('-')">-</button>
+
+                                        <button class="btn" onclick="append('0')">0</button>
+                                        <button class="btn" onclick="append('.')">.</button>
+                                        <button class="btn igual" onclick="calcular()">=</button>
+                                        <button class="btn operador" onclick="append('+')">+</button>
+
+                                        <button class="btn limpiar" onclick="limpiar()">C</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="src/galeria.png" alt="Card imagen" class="card-imagen">
+                    <h4>Galería de imagenes</h4>
+                    <div class="div_botones">
+                        <button class="botones_abrir" id="abrirGaleria">Visitar</button>
+                        <div class="overlayGaleria" id="overlayGaleria">
+                            <div class="carrusel-contenedor">
+                                <button id="cerrarGaleria" class="cerrar">X</button>
+                                <button id="prevImagen" class="flecha">&#10094;</button>
+                                <img id="imagenCarrusel" src="" alt="Imagen carrusel">
+                                <button id="nextImagen" class="flecha">&#10095;</button>
+                            </div>
+                        </div>
+                        <img src="./src/imgCarrusel/8sr.jpg" class="Imagenes_Carrusel" style="display:none;">
+                        <img src="./src/imgCarrusel/3sr.jpeg" class="Imagenes_Carrusel" style="display:none;">
+                        <img src="./src/imgCarrusel/1sr.jpeg" class="Imagenes_Carrusel" style="display:none;">
+                        <img src="./src/imgCarrusel/4sr.jpeg" class="Imagenes_Carrusel" style="display:none;">
+                        <img src="./src/imgCarrusel/5sr.jpeg" class="Imagenes_Carrusel" style="display:none;">
+                        <img src="./src/imgCarrusel/6sr.jpeg" class="Imagenes_Carrusel" style="display:none;">
+                        <img src="./src/imgCarrusel/7srt.jpeg" class="Imagenes_Carrusel" style="display:none;">
+
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="src/onda-de-sonido.png" alt="Card imagen" class="card-imagen">
+                    <h4>Botonera de sonidos</h4>
+                    <div class="div_botones">
+                        <button class="botones_abrir" id="abrirSonidos">Visitar</button>
+                        <div class="overlaySonidos" id="overlaySonidos">
+                            <div class="modal-sonidos">
+                                <button id="cerrarSonidos" class="cerrar">X</button>
+                                <div class="botonera">
+                                    <img src="./src/imgBotonera/donbarredora.jpg" class="imagen-sonido" data-sonido="./src/audios/homero23.mp3" alt="Sonido 1">
+                                    <img src="./src/imgBotonera/homero.jpg" class="imagen-sonido" data-sonido="./src/audios/homero29.mp3" alt="Sonido 2">
+                                    <img src="./src/imgBotonera/nelson.webp" class="imagen-sonido" data-sonido="./src/audios/nelson-aha.mp3" alt="Sonido 3">
+                                    <img src="./src/imgBotonera/puercoaraña.webp" class="imagen-sonido" data-sonido="./src/audios/puerco-arana-homer-simpsons-.mp3" alt="Sonido 4">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tercer_div" id="conocimientos">
+            <section class="conocimientos">
+                <h2>Mis Conocimientos</h2>
+
+                <div class="conocimiento">
+                    <p>HTML / CSS</p>
+                    <div class="barra">
+                        <div class="barra-progreso" style="width: 90%;">90%</div>
+                    </div>
+                </div>
+
+                <div class="conocimiento">
+                    <p>JavaScript</p>
+                    <div class="barra">
+                        <div class="barra-progreso" style="width: 75%;">75%</div>
+                    </div>
+                </div>
+
+                <div class="conocimiento">
+                    <p>Python</p>
+                    <div class="barra">
+                        <div class="barra-progreso" style="width: 70%;">70%</div>
+                    </div>
+                </div>
+
+                <div class="conocimiento">
+                    <p>Java</p>
+                    <div class="barra">
+                        <div class="barra-progreso" style="width: 50%;">50%</div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+    <footer>
+        <div class="footer_div">
+            <p>© 2025 Santiago Lagares, Derechos reservados</p>
+            <div class="media_div">
+                <a href="https://www.linkedin.com/in/santiago-lagares-55b790261/"  target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/toto.lagaress/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+<!--    Modal calculadora-->
+    <script>
+        function append(valor) {
+            document.getElementById('resultado').value += valor
+        }
+
+        function limpiar() {
+            document.getElementById('resultado').value = ''
+        }
+
+        function calcular() {
+            let resultado = document.getElementById('resultado').value
+            try {
+                document.getElementById('resultado').value = eval(resultado)
+            } catch {
+                document.getElementById('resultado').value = 'Error'
+            }
+        }
+
+        const abrirModal = document.getElementById('AbrirCalculadora')
+        const cerrarModal = document.getElementById('CerrarCalculadora')
+        const overlay = document.getElementById('overlayCalculadora')
+
+        abrirModal.addEventListener('click', () => {
+            overlay.style.display = 'flex'
+        })
+
+        cerrarModal.addEventListener('click', () => {
+            overlay.style.display = 'none'
+            limpiar()
+        })
+    </script>
+<!--        Modal galeria-->
+    <script>
+        const abrirGaleria = document.getElementById('abrirGaleria')
+        const cerrarGaleria = document.getElementById('cerrarGaleria')
+        const overlayGaleria = document.getElementById('overlayGaleria')
+        const imagenCarrusel = document.getElementById('imagenCarrusel')
+        const prevImagen = document.getElementById('prevImagen')
+        const nextImagen = document.getElementById('nextImagen')
+        const miniaturas = document.querySelectorAll('.Imagenes_Carrusel')
+
+        let indice = 0
+        const rutas = Array.from(miniaturas).map(img => img.src)
+
+        abrirGaleria.addEventListener('click', () => {
+        overlayGaleria.style.display = 'flex'
+        imagenCarrusel.src = rutas[indice]
+        })
+
+        cerrarGaleria.addEventListener('click', () => {
+        overlayGaleria.style.display = 'none'
+        })
+
+        overlayGaleria.addEventListener('click', e => {
+        if (e.target === overlayGaleria) {
+        overlayGaleria.style.display = 'none'
+        }
+        })
+
+        prevImagen.addEventListener('click', e => {
+        e.stopPropagation()
+        indice = (indice - 1 + rutas.length) % rutas.length
+        imagenCarrusel.src = rutas[indice]
+        })
+
+        nextImagen.addEventListener('click', e => {
+        e.stopPropagation()
+        indice = (indice + 1) % rutas.length
+        imagenCarrusel.src = rutas[indice]
+        })
+    </script>
+<!--    Modal Botonera-->
+    <script>
+        const abrirSonidos = document.getElementById('abrirSonidos')
+        const cerrarSonidos = document.getElementById('cerrarSonidos')
+        const overlaySonidos = document.getElementById('overlaySonidos')
+        const botonesSonido = document.querySelectorAll('.imagen-sonido')
+
+        abrirSonidos.addEventListener('click', () => {
+            overlaySonidos.style.display = 'flex'
+        })
+
+        cerrarSonidos.addEventListener('click', () => {
+            overlaySonidos.style.display = 'none'
+        })
+
+        overlaySonidos.addEventListener('click', e => {
+            if (e.target === overlaySonidos) {
+                overlaySonidos.style.display = 'none'
+            }
+        })
+
+        botonesSonido.forEach(boton => {
+            boton.addEventListener('click', () => {
+                const ruta = boton.getAttribute('data-sonido')
+                const audio = new Audio(ruta)
+                audio.play()
+            })
+        })
+    </script>
+</body>
+</html>

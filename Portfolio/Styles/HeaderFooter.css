@@ -2,12 +2,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Dosis", sans-serif;
 }
 
-/*background: #a20fdb;
-background: linear-gradient(168deg, rgba(162, 15, 219, 1) 29%, rgba(55, 95, 196, 1) 87%);*/
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
 header {
-    background-color: #8B0000;
+    background: linear-gradient(90deg, rgba(162, 15, 219, 1) 29%, rgba(55, 95, 196, 1) 87%);
     text-align: center;
     color: white;
     width: 100%;
@@ -23,21 +37,52 @@ header {
 
 .header_div a {
     text-decoration: none;
-    color: #FFE4E1;
-    font-size: 1rem;
+    color: #ffffff;
+    font-size: 1.5rem;
     font-weight: bold;
     font-family: "Dosis", sans-serif;
     transition: color 0.3s ease;
 }
 
 .header_div a:hover {
-    color: #FFA07A;
+    color: rgb(176, 197, 255);
 }
 
 .name_div {
-    font-size: 0.6rem;
+    font-size: 1rem;
     font-weight: bold;
     margin: 1rem;
+    font-family: "Dosis", sans-serif;
+}
+
+.name_div h1 {
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.name_div h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.name_div h1:hover {
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+.name_div h1:hover::after {
+    width: 100%;
+}
+
+.name_div h1:active {
+    transform: scale(0.95);
 }
 
 .navbar {
@@ -61,44 +106,44 @@ header {
 
 .navbar li a {
     text-decoration: none;
-    color: #FFE4E1; /* Misty Rose */
-    font-size: 0.8rem;
+    color: #ffffff;
+    font-size: 1rem;
     font-weight: bold;
     font-family: "Dosis", sans-serif;
     transition: color 0.3s ease;
 }
 
 .navbar li a:hover {
-    color: #FFA07A;
+    color: #A20FDB;
 }
 
 footer {
-    background-color: #8B0000;
+    background: linear-gradient(90deg, rgba(162, 15, 219, 1) 29%, rgba(55, 95, 196, 1) 87%);
     width: 100%;
     margin-top: auto;
-
+    flex-shrink: 0;
 }
 
 .footer_div {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 1.25rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #FFA07A;
+    color: #ffffff;
+    font-weight: bold;
 }
-
 
 .media_div {
     display: flex;
-    gap: 20px;
+    gap: 1.25rem;
 }
 
 .media_div a {
     text-decoration: none;
-    color: #FFA07A;
-    font-size: 25px;
+    color: #ffffff;
+    font-size: 1.5625rem;
     font-weight: bold;
     font-family: "Dosis", sans-serif;
     transition: all 0.3s ease;
@@ -112,12 +157,12 @@ footer {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #FFA07A;
+    background-color: #ffffff;
     transition: width 0.3s ease;
 }
 
 .media_div a:hover {
-    color: #FFA07A;
+    color: #ffffff;
     transform: translateY(-2px);
 }
 
@@ -129,13 +174,16 @@ footer {
     transform: scale(0.95);
 }
 
-
-
 @media screen and (max-width: 768px) {
     .header_div {
         flex-direction: column;
         text-align: center;
         padding: 0.6rem;
+    }
+
+    .name_div {
+        margin: 0.6rem;
+        font-size: 1.5rem;
     }
 
     .navbar {
@@ -144,16 +192,15 @@ footer {
     }
 
     .navbar ul {
-        display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.4rem;
+        gap: 0.6rem;
         width: 100%;
     }
 
     .header_div a {
-        font-size: 0.8rem;
+        font-size: 1rem;
         padding: 0.2rem;
     }
 
@@ -163,7 +210,7 @@ footer {
     }
 
     .navbar li a {
-        font-size: 0.7rem;
+        font-size: 0.875rem;
         padding: 0.2rem;
     }
 
@@ -186,20 +233,24 @@ footer {
     }
 
     .name_div {
-        font-size: 0.5rem;
+        font-size: 1.2rem;
         margin: 0.3rem;
+    }
+
+    .header_div a {
+        font-size: 0.8rem;
     }
 
     .navbar {
         margin: 0.3rem 0;
     }
 
-    .header_div a {
-        font-size: 0.7rem;
+    .navbar ul {
+        gap: 0.3rem;
     }
 
     .navbar li a {
-        font-size: 0.6rem;
+        font-size: 0.7rem;
         padding: 0.2rem;
     }
 
@@ -212,14 +263,11 @@ footer {
     }
 
     .media_div a {
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     .footer_div p {
         font-size: 0.8rem;
     }
-
-    .navbar ul {
-        gap: 0.2rem;
-    }
 }
+
